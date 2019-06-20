@@ -89,7 +89,6 @@ namespace MicrosoftSpeechSDKSamples.WpfSpeechRecognitionSample
             }
         }
 
-		// Private properties
 		// ORIGINAL nl-NL
 		// private const string defaultLocale = "nl-NL";
 		private const string defaultLocale = "nl-BE";
@@ -139,14 +138,10 @@ namespace MicrosoftSpeechSDKSamples.WpfSpeechRecognitionSample
             this.basicRadioButton.IsChecked = true;
             this.stopButton.IsEnabled = false;
 
-			/// this.SubscriptionKey = this.GetValueFromIsolatedStorage(subscriptionKeyFileName);
-			/// this.CustomModelEndpointId = this.GetValueFromIsolatedStorage(endpointIdFileName);
-			// ORIG this.SubscriptionKey = "5d5d9dc7782a4edc9f7663feff022352";
-            this.subscriptionKey = "d1f2133ac4574bd7ad2eda233a65ef54";
-            // WORKS this.CustomModelEndpointId = "https://westeurope.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v133";
+            this.subscriptionKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
             this.CustomModelEndpointId = "https://westeurope.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1";
 
-			Console.WriteLine("LOLO MainWindow() subscription key:" + this.SubscriptionKey);
+			Console.WriteLine("MainWindow() subscription key:" + this.SubscriptionKey);
 		}
 
 		/// <summary>
@@ -166,15 +161,9 @@ namespace MicrosoftSpeechSDKSamples.WpfSpeechRecognitionSample
             this.optionPanel.IsEnabled = false;
             this.LogRecognitionStart(this.customModelLogText, this.customModelCurrentText);
             this.LogRecognitionStart(this.baseModelLogText, this.baseModelCurrentText);
-            // wavFileName = "C:\\Users\\id095454\\Downloads\\n6.wav";
-			wavFileName = "";
-
+		wavFileName = "";
 			this.Region = ((ComboBoxItem)regionComboBox.SelectedItem).Tag.ToString();
             this.RecognitionLanguage = ((ComboBoxItem)languageComboBox.SelectedItem).Tag.ToString();
-
-			/// Write code for the region
-			Console.WriteLine("LOLO StartButton_Click()");
-			// System.Environment.Exit(0);
 
             if (!AreKeysValid())
             {
